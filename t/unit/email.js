@@ -14,7 +14,10 @@ describe('Check Email', function(){
 
     bluebird.resolve(email.promise_rendered_email_template({
       template_name : 'foobar',
-      context : {user : {name : 'FOO'}}
+      context : {user : {
+        name : 'FOO',
+        reload_with_session_details : function(){ bluebird.resolve(1); },
+      }}
     }))
     .then(function(email){
 
