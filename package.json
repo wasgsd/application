@@ -41,11 +41,12 @@
   "devDependencies": {
     "chai": "^2.2.0",
     "mocha": "^3.5.3",
+    "mochawesome": "^3.0.2",
     "node-sass": "^4.5.3",
     "selenium-webdriver": "2.45.1"
   },
   "scripts": {
-    "test": "node node_modules/mocha/bin/mocha --recursive t/*",
+    "test": "node node_modules/mocha/bin/mocha --recursive t --reporter mochawesome",
     "start": "node bin/wwww",
     "db-update": "node node_modules/.bin/sequelize db:migrate --config=config/db.json --models-path=lib/model/db/",
     "carry-over-allowance": "node bin/calculate_carry_over_allowance_for_all_users.js",
