@@ -32,6 +32,16 @@
   </div>
 
   <div class="form-group">
+    <label for="select_inp" class="control-label">Calendar override</label>
+    <select class="form-control" id="select_inp" name="calendar" aria-describedby="calendar_help">
+      {{#each company.calendars}}
+          <option value="{{this.id}}" {{#if_equal ../employee.CalendarId this.id}} selected="selected"{{/if_equal}}>{{this.name}} </option>
+      {{/each}}
+    </select>
+    <span id="calendar_help" class="help-block">Calendar override for this employee <a href="/settings/general/{{employee.CalendarId}}">More details <i class="fa fa-angle-double-right"></i></a></span>
+  </div>
+
+  <div class="form-group">
       <label for="admin_inp" class="control-label">
         <input class="" id="admin_inp" name="admin" type="checkbox" {{# if employee.admin}} checked="checked"  {{/if}} >
         Is administrator user

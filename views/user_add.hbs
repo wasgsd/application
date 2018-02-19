@@ -65,6 +65,18 @@
       </div>
 
       <div class="form-group">
+        <label for="select_inp" class="col-md-3 control-label">Calendar Override</label>
+        <div class="col-md-3">
+          <select class="form-control" id="select_inp" name="calendar" aria-describedby="calendar_help">
+            {{#each company.calendars}}
+                <option value="{{this.id}}" data-vpp="{{@index}}">{{this.name}}</option>
+            {{/each}}
+          </select>
+        </div>
+        <span id="calendar_help" class="help-block col-md-6">Calendar for this employee</span>
+      </div>
+
+      <div class="form-group">
         <div class="col-md-3 col-md-offset-3">
           <label for="admin_inp" class="_col-md-2 control-label">
             <input class="" id="admin_inp" name="admin" type="checkbox" />
